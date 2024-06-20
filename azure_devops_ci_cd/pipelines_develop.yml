@@ -1,5 +1,5 @@
 trigger:
-- develop
+- $(ENVIRONMENT)
 
 variables:
   awsRegion: 'us-east-1'
