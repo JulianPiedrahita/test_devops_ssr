@@ -34,6 +34,14 @@ jobs:
       tags: '$(imageTag)'
     displayName: 'Build and Push Docker Image to ECR'
 
+- job: TFSec
+  displayName: 'Run TFSec Security Scan'
+  steps:
+  - script: |
+      curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+      tfsec .
+    displayName: 'Run tfsec'    
+
 - job: Deploy
   displayName: 'Deploy to ECS'
   dependsOn: Build
