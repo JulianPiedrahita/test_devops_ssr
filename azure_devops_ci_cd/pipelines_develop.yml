@@ -2,7 +2,6 @@ trigger:
 - develop
 
 variables:
-  # Nombre de tu ECR y URI (cambia estos valores)
   awsRegion: 'us-east-1'
   ecrRepoName: 'my-ecs-app-develop'
   imageTag: 'latest'
