@@ -31,4 +31,5 @@ $(imageTag) : tag creada para la imagen
 $(awsRegion) : debe contener ls region en la cual se tiene creada la infraestructura "us-east-1"
 $(AWS_ACCESS_KEY_ID) : contiene la key_id  de acceso proporsionada por aws
 $(AWS_SECRET_ACCESS_KEY) : contiene la acces_key  de acceso proporsionada por aws
+$(ENVIRONMENT) : variable que determina la rama a desplegar
 
