@@ -1,5 +1,5 @@
 output "vpc_id" {
-  value = aws_vpc.develop.id
+  value = aws_vpc.testing.id
 }
 
 output "subnet_ids" {
