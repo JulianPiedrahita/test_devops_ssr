@@ -1,4 +1,4 @@
-resource "aws_ecs_cluster" "develop" {
+resource "aws_ecs_cluster" "testing" {
   name = "my-ecs-cluster"
 }
 
@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "app" {
 
 resource "aws_ecs_service" "app" {
   name            = "app-service"
-  cluster         = aws_ecs_cluster.develop.id
+  cluster         = aws_ecs_cluster.testing.id
   task_definition = aws_ecs_task_definition.myapp.arn
   desired_count   = 1
   launch_type     = "FARGATE"
