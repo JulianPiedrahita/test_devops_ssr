@@ -1,5 +1,5 @@
 trigger:
-- Testing
+- $(ENVIRONMENT)
 
 variables:
   awsRegion: 'us-east-1'
