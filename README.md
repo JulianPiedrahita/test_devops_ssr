@@ -7,10 +7,10 @@ docker build -t app .
 # Corre el contenedor Docker localmente
 docker run -p 80:80 app
 
-#ECR
+# ECR
 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin (https://github.com/JulianPiedrahita/test_devops_ssr/tree/Develop/app)
 
-#Etiquetas y push image
+# Etiquetas y push image
 docker tag app:latest (https://github.com/JulianPiedrahita/test_devops_ssr/tree/Develop/app):latest
 docker push (https://github.com/JulianPiedrahita/test_devops_ssr/tree/Develop/app):latest
 
