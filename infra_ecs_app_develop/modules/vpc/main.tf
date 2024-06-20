@@ -1,11 +1,11 @@
-resource "aws_vpc" "develop" {
+resource "aws_vpc" "testing" {
   cidr_block = var.cidr_block
 }
 
 resource "aws_subnet" "subnet" {
   count                   = 2
-  vpc_id                  = aws_vpc.develop.id
-  cidr_block              = cidrsubnet(aws_vpc.develop.cidr_block, 4, count.index)
+  vpc_id                  = aws_vpc.testing.id
+  cidr_block              = cidrsubnet(aws_vpc.testing.cidr_block, 4, count.index)
   map_public_ip_on_launch = true
   availability_zone       = element(data.aws_availability_zones.available.names, count.index)
 }
@@ -13,11 +13,11 @@ resource "aws_subnet" "subnet" {
 data "aws_availability_zones" "available" {}
 
 resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.develop.id
+  vpc_id = aws_vpc.testing.id
 }
 
 resource "aws_route_table" "r" {
-  vpc_id = aws_vpc.develop.id
+  vpc_id = aws_vpc.testing.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -32,7 +32,7 @@ resource "aws_route_table_association" "a" {
 }
 
 resource "aws_security_group" "allow_http" {
-  vpc_id = aws_vpc.develop.id
+  vpc_id = aws_vpc.testing.id
 
   ingress {
     from_port   = 80
