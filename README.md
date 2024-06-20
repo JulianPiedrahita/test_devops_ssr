@@ -25,7 +25,7 @@ terraform plan
 # Aplica el plan de Terraform
 terraform apply
 
-#variables utilizadas en el pipeline
+# variables utilizadas en el pipeline
 $(ecrRepoName) : nombre del repositorio que contiene la imagen en aws
 $(imageTag) : tag creada para la imagen
 $(awsRegion) : debe contener ls region en la cual se tiene creada la infraestructura "us-east-1"
