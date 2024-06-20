@@ -1,9 +1,9 @@
 trigger:
-- develop
+- Testing
 
 variables:
   awsRegion: 'us-east-1'
-  ecrRepoName: 'my-ecs-app-develop'
+  ecrRepoName: 'my-ecs-app-testing'
   imageTag: 'latest'
 
 pool:
