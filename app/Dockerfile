@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expone el puerto 80
-EXPOSE 81
+EXPOSE 82
 
 # Define el comando para correr la aplicación
 CMD ["python", "app.py"]
