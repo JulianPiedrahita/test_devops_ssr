@@ -1,6 +1,7 @@
 trigger:
-- $(ENVIRONMENT)
-
+  branches:
+    include:
+      - $(ENVIRONMENT)
 variables:
   awsRegion: 'us-east-1'
   ecrRepoName: 'my-ecs-app-develop'
